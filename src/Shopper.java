@@ -6,7 +6,6 @@ public class Shopper {
         this.name = name;
         this.creditCardName = creditCardName;
         this.creditCardNum = creditCardNum;
-
     }
     public String getName(){
         return name;
