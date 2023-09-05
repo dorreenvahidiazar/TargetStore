@@ -1,4 +1,6 @@
 public class Shopper {
+//this shopper class is created to stimulate a customer buying items from the store;
+//the customer has a name, credit card name and number.
     private String name;
     private String creditCardName;
     private String creditCardNum;

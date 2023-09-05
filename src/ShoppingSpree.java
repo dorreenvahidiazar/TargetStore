@@ -3,19 +3,18 @@ import java.util.Scanner;
 public class ShoppingSpree {
     public static Scanner scnr = new Scanner(System.in);
 
-    public static void main (String [] args)
-    {
-        Shopper aShopper = createAShopper();
+    public static void main (String [] args) {
+        Shopper aShopper = createAShopper();  //creates a shopper object by calling the "createAShopper" method
+        //buys three items by calling the "buyAnItem" method
         Item item1 = buyAnItem();
         Item item2 = buyAnItem();
         Item item3 = buyAnItem();
 
         printReceipt(aShopper, item1, item2, item3);
     }
-    public static void printReceipt(Shopper aShopper, Item anItem1, Item anItem2, Item anItem3)
-    {
+    public static void printReceipt(Shopper aShopper, Item anItem1, Item anItem2, Item anItem3) {
        DecimalFormat df = new DecimalFormat("##,###.00");
-        double grandTotal = 0;   grandTotal = anItem1.getExtendedPrice() +
+        double grandTotal = 0;   grandTotal = anItem1.getExtendedPrice() + //calculate the total cost of items
                                               anItem2.getExtendedPrice() +
                                               anItem3.getExtendedPrice();
         System.out.println("Thank you for shopping at Target today.");
@@ -29,8 +28,7 @@ public class ShoppingSpree {
 
     }
 
-    public static Item buyAnItem()
-    {
+    public static Item buyAnItem() { //this method is written to buy an item
         String name;
         double price;
         int quantity;
@@ -41,11 +39,10 @@ public class ShoppingSpree {
         price = scnr.nextDouble();
         System.out.println("How many " + name + " do you wish to buy? ");
         quantity = scnr.nextInt();
-        Item anItem = new Item(name, price, quantity);
+        Item anItem = new Item(name, price, quantity); //creates an item object
         return anItem;
     }
-    public static Shopper createAShopper()
-    {
+    public static Shopper createAShopper() { //this method is to create a shopper object
         String name, creditCardName, creditCardNum;
         System.out.println("What is your name?");
         name = scnr.nextLine();
@@ -55,7 +52,7 @@ public class ShoppingSpree {
         creditCardNum = scnr.nextLine();
 
         Shopper aShopper = new Shopper(name, creditCardName, creditCardNum);
-        return aShopper;
+        return aShopper; //returns the created shopper object
     }
 
 }

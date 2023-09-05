@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+//this class creates "item" which has a name, a price and quantity
 
 public class Item {
     private String name;
@@ -36,15 +37,15 @@ public class Item {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    public double getExtendedPrice()
-    {
+    public double getExtendedPrice() {
+
         double extendedPrice;
         extendedPrice = quantity * price;
         return extendedPrice;
     }
 
-    public String toString()
-    {
+    public String toString() {
+
         DecimalFormat df = new DecimalFormat("#,###.00");
         double extendedPrice = price * quantity;
         return "Item " + "name='" + name + " " + ", unit price=$" + df.format(price) +
